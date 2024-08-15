@@ -233,6 +233,29 @@ export default defineComponent({
       return slots;
     };
 
+    // render slots expose to parent
+    const getVisibleItemsInfo = () => {
+      const { start, end } = range.value || { start: 0, end: 0 };
+      return {
+        startIndex: start,
+        endIndex: end,
+        visibleItems: (
+          props.dataSources.slice(start, end + 1) as Array<Record<string, any>>
+        ).map((dataSource: Record<string, any>, index) => {
+          const actualIndex = start + index;
+          const uniqueKey =
+            typeof props.dataKey === 'function'
+              ? props.dataKey(dataSource)
+              : dataSource[props.dataKey as string];
+          return {
+            index: actualIndex,
+            uniqueKey,
+            data: dataSource,
+          };
+        }),
+      };
+    };
+
     // event called when each item mounted or size changed
     const onItemResized = (id: string, size: number) => {
       virtual.saveSize(id, size);
@@ -336,6 +359,7 @@ export default defineComponent({
       getClientSize,
       scrollToOffset,
       scrollToIndex,
+      getVisibleItemsInfo,
     });
 
     return () => {

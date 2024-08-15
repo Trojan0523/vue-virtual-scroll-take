@@ -1,6 +1,6 @@
 {
-  "name": "vue3-virtual-scroll-list",
-  "version": "0.2.1",
+  "name": "vue-virtual-scroll-take",
+  "version": "1.0.1",
   "description": "A vue3 component support big amount data list with high scroll performance.",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactjser/vue3-virtual-scroll-list.git"
+    "url": "git+https://github.com/Trojan0523/vue-virtual-scroll-take.git"
   },
   "keywords": [
     "vue3",
@@ -19,12 +19,9 @@
     "scroll-list",
     "virtual-list"
   ],
-  "author": "reactjser",
+  "author": "trojan0523",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/reactjser/vue3-virtual-scroll-list/issues"
-  },
-  "homepage": "https://github.com/reactjser/vue3-virtual-scroll-list#readme",
+  "homepage": "https://github.com/trojan0523/vue-virtual-scroll-take#readme",
   "peerDependencies": {
     "vue": ">=3.0.0"
   },
